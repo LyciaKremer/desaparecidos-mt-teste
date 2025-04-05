@@ -72,7 +72,7 @@ npm run dev
 ```
 
 ## Acesse a aplicação
-```LINK AQUI```
+```desaparecidos-mt-teste.vercel.app```
 
 ## Licença
 Este projeto é de uso exclusivo para fins avaliativos no processo seletivo da SEPLAG-MT (PSS 02/2025).
