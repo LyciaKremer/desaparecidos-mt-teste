@@ -77,7 +77,7 @@ const Detalhes = () => {
 		<>
 			<Header />
 			<main
-				className="flex flex-col py-12 items-center md:bg-[#F6F6F6] min-h-screen"
+				className="flex flex-col mx-4 px-5 py-12 items-center md:bg-[#F6F6F6] min-h-screen"
 				role="main"
 				aria-labelledby="titulo-detalhes"
 			>

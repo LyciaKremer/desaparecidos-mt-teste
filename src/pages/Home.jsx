@@ -44,7 +44,7 @@ function Home() {
 		fetchStats();
 	}, []);
 
-	const buscar = async (pagina = 0, filtrosAtuais) => {
+	const buscar = async (pagina = 0, filtrosAtuais = filtros) => {
 		try {
 			setErro(null);
 
@@ -90,7 +90,7 @@ function Home() {
 
 	const handlePaginaClick = (pagina) => {
 		if (pagina >= 0 && pagina < totalPaginas) {
-			buscar(pagina);
+			buscar(pagina, filtros);
 		}
 	};
 
@@ -144,8 +144,8 @@ function Home() {
 							Busca
 						</h2>
 
-						<div className="flex flex-col md:flex-row gap-4">
-							<div className="flex flex-col gap-2.5 w-full">
+						<div className="flex flex-col md:grid md:grid-cols-6 gap-4 flex-wrap">
+							<div className="flex flex-col gap-2.5 col-span-4">
 								<label htmlFor="nome">Nome</label>
 								<input
 									id="nome"
@@ -155,7 +155,7 @@ function Home() {
 									onChange={handleFiltroChange}
 								/>
 							</div>
-							<div className="flex flex-col gap-2.5">
+							<div className="flex flex-col gap-2.5 col-span-1">
 								<label htmlFor="idadeMin">Idade mínima</label>
 								<input
 									id="idadeMin"
@@ -165,7 +165,7 @@ function Home() {
 									onChange={handleFiltroChange}
 								/>
 							</div>
-							<div className="flex flex-col gap-2.5">
+							<div className="flex flex-col gap-2.5 col-span-1">
 								<label htmlFor="idadeMax">Idade máxima</label>
 								<input
 									id="idadeMax"
@@ -237,7 +237,7 @@ function Home() {
 
 				<section
 					id="resultados"
-					className="grid md:grid-cols-2 items-center justify-center gap-4 px-10 pt-10 pb-24 bg-[#F6F6F6]"
+					className="flex flex-col md:grid grid-cols-2 grid-rows-2 items-center justify-center gap-4 px-10 pt-10 pb-24 bg-[#F6F6F6]"
 				>
 					{erro ? (
 						<p className="text-center text-red-600 col-span-2" role="alert">

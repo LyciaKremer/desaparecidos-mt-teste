@@ -26,10 +26,10 @@ const Card = ({ data }) => {
 			onClick={() => navigate(`/Detalhes/${id}`)}
 			onKeyDown={handleKeyDown}
 			aria-label={`Ver detalhes de ${nome}, ${idade} anos, ${sexo}. Desaparecido em ${localDesaparecimento} no dia ${dataDesaparecimento}.`}
-			className="flex flex-col md:flex-row h-fit rounded-lg border-2 border-[#D9D9D9] cursor-pointer hover:shadow-md transition bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+			className="w-full md:grid grid-cols-3 rounded-lg border-2 border-[#D9D9D9] cursor-pointer hover:shadow-md transition bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
 		>
 			<img
-				className="max-h-56 md:w-[165px] md:h-[165px] object-cover rounded-lg"
+				className="h-72 w-full object-cover rounded-lg col-span-1"
 				src={imgSrc}
 				onError={(e) => {
 					e.target.onerror = null;
@@ -37,7 +37,7 @@ const Card = ({ data }) => {
 				}}
 				alt={`Foto de ${nome}`}
 			/>
-			<div className="flex flex-col px-3.5 py-6 text-left">
+			<div className="flex flex-col px-3.5 py-6 text-left col-span-2">
 				<span className="font-semibold">{nome}</span>
 				<span className="text-[#787878]">
 					{idade} anos, {sexo}
